@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -25,4 +25,10 @@ jobs:
       - name: Run Python script
         run: |
           python data_analysis.py
+          
+      - name: Build Docker image
+        run: docker build -t diet-analysis .
+
+      - name: Run Docker container
+        run: docker run diet-analysis
 
