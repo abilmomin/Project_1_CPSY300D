@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  diet-analysis:
+    image: nickbrunet/diet-analysis
+    container_name: diet-analysis-container
+    volumes:
+      - .:/app
+    restart: "no"
